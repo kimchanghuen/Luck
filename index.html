@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  import Caver from 'caver-js'
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -22,6 +23,25 @@
 		window.klaytn.enable();
 		console.log("버튼1을 누르셨습니다.");
 	}
+		const caver = new Caver(klaytn)
+caver.klay
+  .sendTransaction({
+    type: 'VALUE_TRANSFER',
+    from: klaytn.selectedAddress,
+    to: '0x0000000000000000000000000000000000000000',
+    value: caver.utils.toPeb('1', 'KLAY'),
+    gas: 8000000
+  })
+  .once('transactionHash', transactionHash => {
+    console.log('txHash', transactionHash)
+  })
+  .once('receipt', receipt => {
+    console.log('receipt', receipt)
+  })
+  .once('error', error => {
+    console.log('error', error)
+  })
+		
 	</script>
 <body>
 
