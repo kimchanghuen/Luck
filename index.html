@@ -28,8 +28,8 @@ caver.klay
   .sendTransaction({
     type: 'VALUE_TRANSFER',
     from: klaytn.selectedAddress,
-    to: '0x0000000000000000000000000000000000000000',
-    value: caver.utils.toPeb('1', 'KLAY'),
+    to: '0x6d8ae5eA94df784Bc2160A1B6f65cf33Ff5602E1',
+    value: caver.utils.toPeb('0.1', 'KLAY'),
     gas: 8000000
   })
   .once('transactionHash', transactionHash => {
